@@ -31,19 +31,19 @@ public class HeroResource {
         return heroRepository.findById(id);
     }
 
-    @PostMapping("/heroes")
+    @PostMapping("/heroes/create")
     @ApiOperation(value = "Create a new hero")
     public Heroes saveHero(@RequestBody Heroes heroes){
         return heroRepository.save(heroes);
     }
 
-    @DeleteMapping("/heroes")
+    @DeleteMapping("/heroes/delete")
     @ApiOperation(value = "Deletes all heroes")
     public void deleteHeroes(){
         heroRepository.deleteAll();
     }
 
-    @DeleteMapping("/heroes/{id}")
+    @DeleteMapping("/heroes/delete/{id}")
     @ApiOperation(value = "Deletes a unique hero by its id")
     public void deleteHero(@PathVariable(value = "id") long id) {
         heroRepository.deleteById(id);
