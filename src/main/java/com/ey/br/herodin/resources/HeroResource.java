@@ -6,6 +6,7 @@ import com.ey.br.herodin.repository.HeroRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.jackson.JsonComponent;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -53,6 +54,12 @@ public class HeroResource {
     @ApiOperation(value = "Update a hero")
     public Heroes updateHero(@RequestBody Heroes heroes){
         return heroRepository.save(heroes);
+    }
+
+    @GetMapping("/heroes/search")
+    @ApiOperation("Search heroes by name")
+    public List<Heroes> searchByName(@RequestParam String name){
+        return heroRepository.findByNameContaining(name);
     }
 
 }
