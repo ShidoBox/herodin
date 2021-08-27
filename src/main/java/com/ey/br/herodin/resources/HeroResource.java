@@ -59,7 +59,7 @@ public class HeroResource {
     @GetMapping("/heroes/search")
     @ApiOperation("Search heroes by name")
     public List<Heroes> searchByName(@RequestParam String name){
-        return heroRepository.findByNameContaining(name);
+        return heroRepository.findByNameContainingIgnoreCase(name);
     }
 
 }
