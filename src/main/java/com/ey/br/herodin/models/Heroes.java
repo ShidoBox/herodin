@@ -12,9 +12,6 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 
 @Entity
@@ -32,9 +29,8 @@ public class Heroes implements Serializable {
     private String name;
 
 //    TODO: Implement a List of Powers
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    private Set<String> powers = new HashSet<>();
+//    @ElementCollection
+//    private Arra<String> powers = new ArrayList<String>();
 
     private String universe;
 
@@ -61,13 +57,13 @@ public class Heroes implements Serializable {
         this.name = name;
     }
 
-    public Set<String> getPowers() {
-        return powers;
-    }
-
-    public void setPowers(Set<String> powers) {
-        this.powers = powers;
-    }
+//    public ArrayList<String> getPowers() {
+//        return powers;
+//    }
+//
+//    public void setPowers(ArrayList<String> powers) {
+//        this.powers = powers;
+//    }
 
     public String getUniverse() {
         return universe;
