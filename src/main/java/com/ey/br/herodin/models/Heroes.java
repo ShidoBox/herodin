@@ -28,6 +28,10 @@ public class Heroes implements Serializable {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> powers = new HashSet<>();
 
+    // Plan B
+    private String powerString;
+
+
     private String universe;
 
     private ZonedDateTime registrationDate = ZonedDateTime.now();
@@ -61,6 +65,15 @@ public class Heroes implements Serializable {
         this.powers = powers;
     }
 
+    // Plan B
+    public String getPowerString() {
+        return powerString;
+    }
+
+    public void setPowerString(String powerString) {
+        this.powerString = powerString;
+    }
+
     public String getUniverse() {
         return universe;
     }
@@ -85,3 +98,4 @@ public class Heroes implements Serializable {
         this.active = active;
     }
 }
+
