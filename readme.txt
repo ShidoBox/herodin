@@ -24,7 +24,3 @@ Arquivo: docker-compose.yml
 - Linux: sudo docker network ls
 
 #5: Caso todas as etapas tenham sido concluídas com sucesso, basta concectar pelo gerenciador de sua preferencia. 
-
-
-
-
