@@ -29,5 +29,28 @@ class HerodinApplicationTests {
 			return false;
 		}
 	}
+	
+	@Test
+    public void validatorUniverse() {
+    	boolean result = checkUniverse("EY Comics");    	
+    	assertTrue(result);
+    }
+	
+	@Test
+    public void invalidatorUniverse() {
+    	boolean result = checkUniverse("DC Comics");    	
+    	assertFalse(result);
+    }
+
+	private boolean checkUniverse(String string) {
+		if (string.equals("EY Comics") || string.equals("Trainee Comics")
+		|| string.equals("Outros")) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+	}
 
 }
